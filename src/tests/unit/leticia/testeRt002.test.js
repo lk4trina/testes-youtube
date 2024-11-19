@@ -9,6 +9,7 @@ describe('NotificacaoController', () => {
     notificacaoController = new NotificacaoController();
   });
 
+  //CT004: Validar ativação notificações
   describe('ativarNotificacoes', () => {
     it('deve ativar notificações para um canal inscrito e atualizar o status para "ativadas"', () => {
 
@@ -21,6 +22,7 @@ describe('NotificacaoController', () => {
     });
   });
 
+// CT005: Desabilitação de Notificações
   describe('desativarNotificacoes', () => {
     it('deve desativar notificações para um canal inscrito e atualizar o status para "desativadas"', () => {
       const canalId = '4040';
