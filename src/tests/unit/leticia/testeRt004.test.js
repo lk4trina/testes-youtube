@@ -8,6 +8,9 @@ describe('CanalController', () => {
     canalController = new CanalController();
   });
 
+
+//CT007: Verificar se o número de inscritos é atualizado após uma inscrição
+
   describe('displaySubscriberCount', () => {
     it('deve atualizar o número de inscritos para "2 inscritos" após uma nova inscrição', () => {
       
