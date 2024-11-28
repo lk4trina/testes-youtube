@@ -8,8 +8,9 @@ describe('CanalController', () => {
     canalController = new CanalController();
   });
 
-// CT006: Verificar se o número de inscritos é exibido corretamente para um canal com um valor específico de inscritos
-  describe('displaySubscriberCount', () => {
+  // CT006: Verificar se o número de inscritos é exibido corretamente para um canal com um valor específico de inscritos
+
+  describe('displaySubscriberCount', () => { 
     it('deve exibir "0 inscritos" quando o número de inscritos for 0', () => {
       const output = canalController.displaySubscriberCount(0);
       expect(output).toEqual('0 inscritos');

@@ -1,7 +1,7 @@
 import { describe, it, beforeEach, expect } from "vitest";
 import VideoController from "src/controller/VideoController";
 
-describe("VideoController - salvarProgresso e retomarProgresso", () => {
+describe("salvarProgresso e retomarProgresso", () => {
   let videoController;
 
   
