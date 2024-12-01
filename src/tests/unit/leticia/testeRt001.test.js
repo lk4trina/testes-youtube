@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { inscreverUsuario, obterCanaisInscritos } from 'src/services/canalServices';
+import { inscreverUsuario, obterCanaisInscritos } from 'src/services/CanalService';
 
 
 //CT001: Validar inscrição em Canal com Usuário Autenticado
