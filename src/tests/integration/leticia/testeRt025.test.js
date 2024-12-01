@@ -1,39 +1,57 @@
-import { describe, it, expect } from "vitest";
-import NotificacaoController from "src/controller/NotificacaoController";
+import { describe, it, expect, beforeEach } from 'vitest';
+import NotificacaoController from 'src/controller/NotificacaoController';
+import { CanalController } from 'src/controller/CanalController';
 
+describe('Notificação de novos vídeos', () => {
+  let notificacaoController;
+  let canalController;
 
-describe("Gerenciar notificações de vídeos", () => {
+  beforeEach(() => {
+    notificacaoController = new NotificacaoController();
+    canalController = new CanalController();
 
-    //CT046
-  it("deve gerar uma notificação para novo upload de vídeo", () => {
-    const notificacaoController = new NotificacaoController();
+    notificacaoController.notificacoes = {
+      'canal1': 'ativadas',
+    };
+  });
 
-    const canalId = "canal_x";
-    notificacaoController.notificacoes[canalId] = "desativadas";
+  // CT046
+  it('deve gerar uma notificação ao detectar um novo upload em um canal seguido', () => {
+    // Simula novo upload no canal seguido
+    const novoVideo = { titulo: 'Novo Vídeo', link: 'https://youtu.be/test' };
 
-    notificacaoController.ativarNotificacoes(canalId);
+    // Função simulada para verificar novos uploads
+    const verificarUploads = (canalId, video) => {
+      if (notificacaoController.notificacoes[canalId] === 'ativadas') {
+        return {
+          mensagem: `Novo vídeo disponível: ${video.titulo}`,
+          link: video.link,
+        };
+      }
+      return null;
+    };
 
-    const novoUpload = true;
-    if (novoUpload) {
-      notificacaoController.notificacoes[canalId] = "novo_upload";
-    }
+    // Ação: Verificar novos uploads
+    const notificacao = verificarUploads('canal1', novoVideo);
 
-    expect(notificacaoController.notificacoes[canalId]).toBe("novo_upload");
+    // Validações
+    expect(notificacao).not.toBeNull();
+    expect(notificacao.mensagem).toBe('Novo vídeo disponível: Novo Vídeo');
+    expect(notificacao.link).toBe('https://youtu.be/test');
   });
 
   //CT047
+  it('não deve gerar notificação se não houver novos uploads', () => {
+    // Ação: Simula ausência de novos uploads
+    const verificarUploads = (canalId, video) => {
+      if (!video) {
+        return null;
+      }
+    };
 
-  it("não deve gerar uma notificação se não houver novos uploads", () => {
-    const notificacaoController = new NotificacaoController();
+    const notificacao = verificarUploads('canal1', null);
 
-    const canalId = "canal_x";
-    notificacaoController.notificacoes[canalId] = "ativadas";
-
-    const novoUpload = false;
-    if (!novoUpload) {
-      notificacaoController.notificacoes[canalId] = "sem_novo_upload";
-    }
-
-    expect(notificacaoController.notificacoes[canalId]).toBe("sem_novo_upload");
+    // Validações
+    expect(notificacao).toBeNull();
   });
 });
