@@ -25,7 +25,7 @@ describe("ComentarioController - Moderação de Comentários", () => {
       (c) => c.comentario === "Comentário com palavrao1"
     );
     const isInapropriado = controller.isComentarioInapropriado(
-      comentarioInapropriado
+      comentarioInapropriado.comentario 
     );
     expect(isInapropriado).toBe(true);
   });

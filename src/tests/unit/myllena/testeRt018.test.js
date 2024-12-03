@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach } from "vitest";
 import { ComentarioController } from "../../../controller/ComentarioController";
 
-describe("ComentarioController", () => {
+describe("ComentarioController - a=validação adicionar comentários(length)", () => {
   let controller;
 
   beforeEach(() => {
