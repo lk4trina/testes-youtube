@@ -7,6 +7,12 @@ class ControllerPesquisa {
         "Programação para iniciantes: um guia prático",
         "Como desenvolver software com alta produtividade",
       ];
+
+      this.videos = [
+        { id_video: 1, nome: "Introdução à Programação", classificacaoEtaria: "Livre" },
+        { id_video: 2, nome: "JavaScript Avançado", classificacaoEtaria: "Livre" },
+        { id_video: 3, nome: "Conteúdo Restrito para Maiores de 18", classificacaoEtaria: "18+" },
+      ];
     }
   
     /**

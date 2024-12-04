@@ -8,6 +8,8 @@ class ControllerCompartilhamento {
         { id_video: 5, nome: "Técnicas Avançadas de Programação" },
       ];
       this.usuariosAutenticados = [1, 2, 3]; // IDs de usuários autenticados
+
+      this.redeSocialDisponivel = ["Facebook", "Twitter", "Instagram"];
     }
   
     /**
@@ -36,7 +38,7 @@ class ControllerCompartilhamento {
      * @returns {string} - Opções de compartilhamento disponíveis.
      */
     opcoesCompartilhamento() {
-      return "Compartilhar via Facebook, Twitter, ou Email.";
+      return "Compartilhar via Facebook, Twitter, ou Instagram.";
     }
   
     /**
@@ -47,6 +49,19 @@ class ControllerCompartilhamento {
     gerarLinkCompartilhamento(video_id) {
       return `https://meusvideos.com/video/${video_id}/compartilhar`;
     }
+
+    /**
+    * Método para enviar vídeo para a rede social.
+    * @param {string} rede_social - A rede social escolhida.
+    * @param {string} link - O link do vídeo.
+    * @returns {boolean} - Retorna true se o vídeo foi enviado com sucesso.
+    */
+    enviarParaRedeSocial(rede_social, video_id) {
+    const link = this.gerarLinkCompartilhamento(video_id);
+    console.log(`Enviando vídeo para ${rede_social}: ${link}`);
+    return true;
+  }  
+     
   }
   
   export default ControllerCompartilhamento;
