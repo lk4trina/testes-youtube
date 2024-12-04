@@ -16,5 +16,8 @@
   "devDependencies": {
     "@vitest/ui": "^2.1.6",
     "vitest": "^2.1.5"
+  },
+  "dependencies": {
+    "testes-youtube": "file:"
   }
 }
