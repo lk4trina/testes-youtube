@@ -59,6 +59,11 @@ class VideoController {
     }
     this.qualidadeVideo = qualidade;
   }
+
+
+
+
+  
 }
 
 export default VideoController;
