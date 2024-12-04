@@ -17,6 +17,6 @@ describe("RT015: Compartilhamento de vídeo - Testes do compartilhamento de víd
 
     expect(resultado).toContain("Compartilhado com sucesso!");
     expect(resultado).toContain("Link de compartilhamento: https://meusvideos.com/video/2/compartilhar");
-    expect(resultado).toContain("Opções: Compartilhar via Facebook, Twitter, ou Email.");
+    expect(resultado).toContain("Opções: Compartilhar via Facebook, Twitter, ou Instagram.");
   });
 });

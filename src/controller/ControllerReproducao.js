@@ -1,3 +1,4 @@
+import ControllerGerenciadorMidia from "src/controller/ControllerGerenciadorMidia"; 
 class ControllerReproducao {
     constructor() {
       this.videos = [
@@ -7,6 +8,9 @@ class ControllerReproducao {
         { id_video: 4, nome: "Desenvolvimento Web", duracao: 720, tempoAtual: 0 }, // 12 minutos
       ];
       this.videoReproduzindo = null;
+
+      this.gerenciadorMidia = new ControllerGerenciadorMidia(); // Instancia GerenciadorMidia dentro do ControllerReproducao
+      this.reproduzindo = false;
     }
   
     /**
@@ -50,6 +54,28 @@ class ControllerReproducao {
       this.videoReproduzindo = null;
       return true;
     }
+  
+    // Método para iniciar a reprodução de um vídeo
+    iniciarReproducao(id_video) {
+      const video = this.gerenciadorMidia.buscarVideo(id_video);
+  
+      if (!video) {
+        return "Erro: Vídeo não encontrado."; // Caso o vídeo não exista
+      }
+  
+      if (video.status === "indisponível") {
+        return "Erro: Vídeo indisponível."; // Caso o vídeo esteja indisponível
+      }
+  
+      this.reproduzindo = true;
+      return "Reprodução iniciada com sucesso.";
+    }
+  
+    // Método para verificar se está reproduzindo
+    estaReproduzindo() {
+      return this.reproduzindo;
+    }
+  
   }
   
   export default ControllerReproducao;
