@@ -35,7 +35,7 @@ Este repositório contém o projeto desenvolvido para a disciplina de **Testes**
 3. **Execute os testes**  
    - **Todos os testes**:  
      ```bash
-     npm test
+     npm run test
      ```  
    - **Modo de cobertura**:  
      ```bash
