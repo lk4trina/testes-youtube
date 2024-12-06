@@ -78,6 +78,6 @@ Os testes cobrem funcionalidades como:
 ## 👩‍💻 Desenvolvedoras  
 
 - **Letícia Katrina** - Desenvolvedora de Software - [GitHub](https://github.com/lk4trina)  
-- **Aline Rodruigues** - Desenvolvedora de Software - [GitHub](https://github.com/Boninixs)  
+- **Aline Rodrigues** - Desenvolvedora de Software - [GitHub](https://github.com/Boninixs)  
 - **Ana Paula** - Desenvolvedora de Software - [GitHub](https://github.com/anapaula)  
 - **Myllena Miranda** - Desenvolvedora de Software - [GitHub](https://github.com/myllenam)  
