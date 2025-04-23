@@ -24,7 +24,7 @@ Este repositório contém o projeto desenvolvido para a disciplina de **Testes**
 
 1. **Clone o repositório**  
    ```bash
-   git clone https://github.com/seu-usuario/testes-youtube.git
+   git clone https://github.com/lk4trina/testes-youtube.git
    ```
 
 2. **Instale as dependências**  
